@@ -1,5 +1,4 @@
 @import "/src/app/styles/mixins.scss";
 .container-card {
-  height: 355px;
   @include stylecard;
 }

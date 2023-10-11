@@ -8,6 +8,9 @@ import { CardComponent } from './components/moleculas/card/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home/home.component';
 import { ModalComponent } from './components/organism/modal/modal.component';
+import { PlacesComponent } from './pages/places/places.component';
+import { CardsmallComponent } from './components/moleculas/card/cardsmall/cardsmall.component';
+import { SmallmodalComponent } from './components/organism/modalsmall/smallmodal/smallmodal.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { ModalComponent } from './components/organism/modal/modal.component';
     CardComponent,
     HomeComponent,
     ModalComponent,
+    PlacesComponent,
+    CardsmallComponent,
+    SmallmodalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

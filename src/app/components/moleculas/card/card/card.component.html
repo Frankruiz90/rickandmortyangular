@@ -1,4 +1,10 @@
-<div class="card container-card" style="width: 12rem">
+<div
+  class="card container-card"
+  style="width: 12rem"
+  (click)="details(character.id)"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+>
   <img
     src="{{ character.image }}"
     class="card-img-top"

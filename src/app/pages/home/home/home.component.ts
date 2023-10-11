@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
         next: (data) => {
           this.info = data.info;
           this.response = data.results;
-          console.log('hola', this.response);
           localStorage.setItem('info', JSON.stringify(this.info));
           localStorage.setItem('dataCharacters', JSON.stringify(this.response));
           return this.response;
