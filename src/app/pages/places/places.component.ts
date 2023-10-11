@@ -32,8 +32,6 @@ export class PlacesComponent implements OnInit {
             'dataPlaces',
             JSON.stringify(this.responseLocations)
           );
-          console.log('entre');
-
           return this.responseLocations;
         },
       });
@@ -41,6 +39,5 @@ export class PlacesComponent implements OnInit {
   }
   detailsPlace(place: any) {
     this.detailsLocation = place;
-    console.log('en home', place);
   }
 }
