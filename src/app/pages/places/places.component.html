@@ -1,0 +1,11 @@
+<div class="container content-places">
+  <div class="d-flex flex-wrap justify-content-evenly">
+    <app-cardsmall
+      *ngFor="let place of responseLocations"
+      class="mb-4"
+      [place]="place"
+      (detailsPlace)="detailsPlace($event)"
+    ></app-cardsmall>
+    <app-smallmodal [dataPlace]="detailsLocation"> </app-smallmodal>
+  </div>
+</div>

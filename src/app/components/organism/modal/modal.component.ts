@@ -1,4 +1,4 @@
-import { Component, Input, AfterContentChecked } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Character } from 'src/app/interface/character.intenface';
 
 @Component({
@@ -6,10 +6,6 @@ import { Character } from 'src/app/interface/character.intenface';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
 })
-export class ModalComponent implements AfterContentChecked {
+export class ModalComponent {
   @Input() dataCharacter: Character = {};
-
-  ngAfterContentChecked(): void {
-    console.log('datacharacter', this.dataCharacter);
-  }
 }
