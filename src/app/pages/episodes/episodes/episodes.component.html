@@ -1,0 +1,11 @@
+<div class="container content-episode">
+  <div class="d-flex flex-wrap justify-content-evenly">
+    <app-cardsmall
+      *ngFor="let episode of responseEpisodes"
+      class="mb-4"
+      [episode]="episode"
+      (detailsEpisode)="detailsEpisode($event)"
+    ></app-cardsmall>
+    <app-smallmodal [dataEpisode]="detailsEpisodes"> </app-smallmodal>
+  </div>
+</div>

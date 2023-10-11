@@ -35,6 +35,5 @@ export class HomeComponent implements OnInit {
   }
   details(details: any) {
     this.characterDetails = details;
-    console.log('en home', details);
   }
 }

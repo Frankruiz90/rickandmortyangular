@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Episodes } from 'src/app/interface/episodes.interface';
 import { Location } from 'src/app/interface/locations.interface';
 
 @Component({
@@ -8,4 +9,5 @@ import { Location } from 'src/app/interface/locations.interface';
 })
 export class SmallmodalComponent {
   @Input() dataPlace: Location = {};
+  @Input() dataEpisode: Episodes = {};
 }

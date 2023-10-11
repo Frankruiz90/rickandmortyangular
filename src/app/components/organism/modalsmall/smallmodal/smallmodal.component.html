@@ -8,7 +8,9 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ dataPlace.name }}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ dataPlace.name || dataEpisode.name }}
+        </h5>
         <button
           type="button"
           class="btn-close"
@@ -17,16 +19,26 @@
         ></button>
       </div>
       <div class="modal-body d-flex justify-content-around">
-        <p class="card-text">
+        <p class="card-text" *ngIf="!dataEpisode.air_date">
           <strong>Type:</strong><br />
           {{ dataPlace.type }}
         </p>
-        <p class="card-text">
+        <p class="card-text" *ngIf="!dataEpisode.air_date">
           <strong>Dimension:</strong><br />
           {{ dataPlace.dimension }}
         </p>
+        <p class="card-text" *ngIf="dataEpisode.air_date">
+          <strong>Air Date:</strong><br />
+          {{ dataEpisode.air_date }}
+        </p>
+        <p class="card-text" *ngIf="dataEpisode.air_date">
+          <strong>Episode:</strong><br />
+          {{ dataEpisode.episode }}
+        </p>
         <p class="card-text">
-          <strong>Created:</strong> <br />{{ dataPlace.created }}
+          <strong>Created:</strong> <br />{{
+            dataPlace.created || dataEpisode.created
+          }}
         </p>
       </div>
     </div>
