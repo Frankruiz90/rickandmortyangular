@@ -1,7 +1,7 @@
 <div
   class="card container-card"
   style="width: 13rem"
-  (click)="details(place.id)"
+  (click)="details(place.id || episode.id)"
   data-bs-toggle="modal"
   data-bs-target="#exampleModal2"
 >
@@ -13,10 +13,10 @@
       <strong>Status:</strong> {{ place.type }}
     </p>
     <h5 *ngIf="episode.name" class="card-title container-card__title">
-      {{ episode.name }}
+      Name: {{ episode.name }}
     </h5>
     <p *ngIf="episode.name" class="card-text">
-      <strong>Status:</strong> {{ episode.episode }}
+      <strong>Episode:</strong> {{ episode.episode }}
     </p>
     <button
       type="button"
