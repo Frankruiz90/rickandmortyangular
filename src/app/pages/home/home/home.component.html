@@ -1,0 +1,11 @@
+<div class="container content-home">
+  <div class="d-flex flex-wrap justify-content-evenly">
+    <app-card
+      *ngFor="let character of response"
+      class="mb-4"
+      [character]="character"
+      (detailsSelect)="details($event)"
+    ></app-card>
+    <app-modal [dataCharacter]="characterDetails"> </app-modal>
+  </div>
+</div>
