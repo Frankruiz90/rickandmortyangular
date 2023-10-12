@@ -1,0 +1,4 @@
+@import "/src/app/styles/mixins.scss";
+.container-card {
+  @include stylecard;
+}

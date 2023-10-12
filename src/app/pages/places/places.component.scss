@@ -1,0 +1,10 @@
+@import "/src/app/styles/mixins.scss";
+.content-places {
+  @include page;
+  &__title {
+    color: #0000008f;
+  }
+}
+.paginator {
+  @include mypaginator;
+}

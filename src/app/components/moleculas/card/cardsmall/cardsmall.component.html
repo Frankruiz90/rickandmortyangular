@@ -1,0 +1,22 @@
+<div
+  class="card container-card"
+  style="width: 13rem"
+  (click)="details(place.id || episode.id)"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal2"
+>
+  <div class="card-body d-grid gap-2">
+    <h5 *ngIf="place.name" class="card-title container-card__title">
+      {{ place.name }}
+    </h5>
+    <p *ngIf="place.name" class="card-text container-card__info">
+      <strong>Status:</strong> {{ place.type }}
+    </p>
+    <h5 *ngIf="episode.name" class="card-title container-card__title">
+      Name: {{ episode.name }}
+    </h5>
+    <p *ngIf="episode.name" class="card-text">
+      <strong>Episode:</strong> {{ episode.episode }}
+    </p>
+  </div>
+</div>

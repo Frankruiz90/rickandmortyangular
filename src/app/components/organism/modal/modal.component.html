@@ -1,0 +1,46 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ dataCharacter.name }}
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body d-flex justify-content-around">
+        <img
+          src="{{ dataCharacter.image }}"
+          class="card-img-top img-thumbnail rounded mb-2"
+          style="height: 200px; width: 200px"
+          alt="{{ dataCharacter.name }}"
+        />
+        <div class="pt-3">
+          <p class="card-text">
+            <strong>Status:</strong> {{ dataCharacter.status }}
+          </p>
+          <p class="card-text">
+            <strong>Gender:</strong> {{ dataCharacter.gender }}
+          </p>
+          <p class="card-text">
+            <strong>Species:</strong> {{ dataCharacter.species }}
+          </p>
+          <p class="card-text">
+            <strong>Created:</strong> {{ dataCharacter.created }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

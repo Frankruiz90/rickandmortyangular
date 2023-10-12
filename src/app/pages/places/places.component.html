@@ -1,0 +1,23 @@
+<div class="container content-places">
+  <h1 class="content-places__title text-center mb-4">Locations</h1>
+
+  <div class="d-flex flex-wrap justify-content-evenly">
+    <app-cardsmall
+      *ngFor="let place of responseLocations"
+      class="mb-4"
+      [place]="place"
+      (detailsPlace)="detailsPlace($event)"
+    ></app-cardsmall>
+    <app-smallmodal [dataPlace]="detailsLocation"> </app-smallmodal>
+  </div>
+  <mat-paginator
+    [length]="infoPlaces.pages"
+    [pageSize]="1"
+    [pageIndex]="actualPage"
+    [showFirstLastButtons]="true"
+    [hidePageSize]="true"
+    (page)="pageSelected($event)"
+    class="paginator d-flex justify-content-evenly"
+  >
+  </mat-paginator>
+</div>

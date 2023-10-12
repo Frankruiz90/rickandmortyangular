@@ -1,0 +1,33 @@
+@mixin stylecard {
+  background: #fbfafa;
+  -webkit-box-shadow: 2px 2px 8px 0.5px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 2px 2px 8px 0.5px rgba(0, 0, 0, 0.57);
+  box-shadow: 2px 2px 8px 0.5px rgba(0, 0, 0, 0.57);
+  transition: all 500ms;
+  cursor: pointer;
+  &:hover {
+    -webkit-box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.57);
+    box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.57);
+  }
+  &__title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &__info {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+@mixin mypaginator {
+  color: rgb(93, 95, 93);
+  font-weight: 500;
+  background: center;
+}
+
+@mixin page {
+  margin-top: 80px;
+}
