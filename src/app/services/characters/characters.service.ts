@@ -16,4 +16,8 @@ export class CharactersService {
 
     return this.http.get<ApiCharactersResponse>(url);
   }
+  getCharactersPage(page: any): Observable<ApiCharactersResponse> {
+    const url = `${this.apiRickAndMorty}/character/?page=${page}`;
+    return this.http.get<ApiCharactersResponse>(url);
+  }
 }

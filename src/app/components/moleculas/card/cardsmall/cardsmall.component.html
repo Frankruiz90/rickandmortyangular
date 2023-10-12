@@ -9,7 +9,7 @@
     <h5 *ngIf="place.name" class="card-title container-card__title">
       {{ place.name }}
     </h5>
-    <p *ngIf="place.name" class="card-text">
+    <p *ngIf="place.name" class="card-text container-card__info">
       <strong>Status:</strong> {{ place.type }}
     </p>
     <h5 *ngIf="episode.name" class="card-title container-card__title">
@@ -18,14 +18,5 @@
     <p *ngIf="episode.name" class="card-text">
       <strong>Episode:</strong> {{ episode.episode }}
     </p>
-    <button
-      type="button"
-      class="btn btn-sm rounded-pill container-card__button"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal2"
-      (click)="details(place.id || episode.id)"
-    >
-      Details
-    </button>
   </div>
 </div>
