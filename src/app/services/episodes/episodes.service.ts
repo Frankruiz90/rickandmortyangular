@@ -12,7 +12,10 @@ export class EpisodesService {
   constructor(private http: HttpClient) {}
   getEpisodes(): Observable<ApiEpisodesResponse> {
     const url = `${this.apiRickAndMorty}/episode`;
-
+    return this.http.get<ApiEpisodesResponse>(url);
+  }
+  getEpisodesPage(page: any): Observable<ApiEpisodesResponse> {
+    const url = `${this.apiRickAndMorty}/episode/?page=${page}`;
     return this.http.get<ApiEpisodesResponse>(url);
   }
 }

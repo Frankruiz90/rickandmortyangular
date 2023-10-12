@@ -1,4 +1,5 @@
 <div class="container content-episode">
+  <h1 class="content-episode__title text-center mb-4">Episodes</h1>
   <div class="d-flex flex-wrap justify-content-evenly">
     <app-cardsmall
       *ngFor="let episode of responseEpisodes"
@@ -8,4 +9,14 @@
     ></app-cardsmall>
     <app-smallmodal [dataEpisode]="detailsEpisodes"> </app-smallmodal>
   </div>
+  <mat-paginator
+    [length]="infoEpisodes.pages"
+    [pageSize]="1"
+    [pageIndex]="actualPage"
+    [showFirstLastButtons]="true"
+    [hidePageSize]="true"
+    (page)="pageSelected($event)"
+    class="paginator d-flex justify-content-evenly"
+  >
+  </mat-paginator>
 </div>

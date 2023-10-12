@@ -12,6 +12,8 @@ export class PlacesComponent implements OnInit {
   responseLocations: Location[] = [];
   infoPlaces!: Info;
   detailsLocation: Location = {};
+  actualPage: any = localStorage.getItem('pagePlaces');
+
   constructor(private PlacesService: PlacesService) {}
   ngOnInit(): void {
     this.getPlaces();
@@ -27,11 +29,7 @@ export class PlacesComponent implements OnInit {
         next: (data) => {
           this.infoPlaces = data.info;
           this.responseLocations = data.results;
-          localStorage.setItem('infoPlaces', JSON.stringify(this.infoPlaces));
-          localStorage.setItem(
-            'dataPlaces',
-            JSON.stringify(this.responseLocations)
-          );
+          this.setStorage(1);
           return this.responseLocations;
         },
       });
@@ -39,5 +37,21 @@ export class PlacesComponent implements OnInit {
   }
   detailsPlace(place: any) {
     this.detailsLocation = place;
+  }
+  pageSelected(page: any) {
+    this.PlacesService.getPlacesPage(page.pageIndex + 1).subscribe({
+      next: (data) => {
+        this.infoPlaces = data.info;
+        this.responseLocations = data.results;
+        this.setStorage(page);
+        return this.responseLocations;
+      },
+    });
+  }
+  setStorage(page: any) {
+    localStorage.setItem('infoPlaces', JSON.stringify(this.infoPlaces));
+    localStorage.setItem('dataPlaces', JSON.stringify(this.responseLocations));
+    this.actualPage = page.pageIndex;
+    localStorage.setItem('pagePlaces', this.actualPage);
   }
 }

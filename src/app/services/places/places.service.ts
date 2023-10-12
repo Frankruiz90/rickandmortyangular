@@ -15,4 +15,9 @@ export class PlacesService {
 
     return this.http.get<ApilocationsResponse>(url);
   }
+
+  getPlacesPage(page: any): Observable<ApilocationsResponse> {
+    const url = `${this.apiRickAndMorty}/location/?page=${page}`;
+    return this.http.get<ApilocationsResponse>(url);
+  }
 }

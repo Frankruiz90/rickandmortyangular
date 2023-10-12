@@ -10,6 +10,7 @@ import { CharactersService } from 'src/app/services/characters/characters.servic
 export class HomeComponent implements OnInit {
   response: Character[] = [];
   info!: Info;
+  actualPage: any = localStorage.getItem('page');
   characterDetails: Character = {};
   constructor(private CharactersService: CharactersService) {}
   ngOnInit(): void {
@@ -26,8 +27,7 @@ export class HomeComponent implements OnInit {
         next: (data) => {
           this.info = data.info;
           this.response = data.results;
-          localStorage.setItem('info', JSON.stringify(this.info));
-          localStorage.setItem('dataCharacters', JSON.stringify(this.response));
+          this.setStorage(1);
           return this.response;
         },
       });
@@ -35,5 +35,21 @@ export class HomeComponent implements OnInit {
   }
   details(details: any) {
     this.characterDetails = details;
+  }
+  pageSelected(page: any) {
+    this.CharactersService.getCharactersPage(page.pageIndex + 1).subscribe({
+      next: (data) => {
+        this.info = data.info;
+        this.response = data.results;
+        this.setStorage(page);
+        return this.response;
+      },
+    });
+  }
+  setStorage(page: any) {
+    localStorage.setItem('info', JSON.stringify(this.info));
+    localStorage.setItem('dataCharacters', JSON.stringify(this.response));
+    this.actualPage = page.pageIndex;
+    localStorage.setItem('page', this.actualPage);
   }
 }

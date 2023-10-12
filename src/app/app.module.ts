@@ -12,6 +12,8 @@ import { PlacesComponent } from './pages/places/places.component';
 import { CardsmallComponent } from './components/moleculas/card/cardsmall/cardsmall.component';
 import { SmallmodalComponent } from './components/organism/modalsmall/smallmodal/smallmodal.component';
 import { EpisodesComponent } from './pages/episodes/episodes/episodes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,13 @@ import { EpisodesComponent } from './pages/episodes/episodes/episodes.component'
     SmallmodalComponent,
     EpisodesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
